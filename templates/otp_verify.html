@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="tel"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .btn {
+            background-color: #009900;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Helvetica Neue', sans-serif;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #007700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OTP Verification</h1>
+        <form action="/otp" method="post">
+            <label for="number">Mobile Number</label>
+            <input type="tel" id="number" name="number" placeholder="Mobile Number">
+
+            <label for="received_otp">Enter OTP:</label>
+            <input type="text" id="received_otp" name="received_otp" placeholder="Enter OTP">
+            
+            <input class="btn btn-success btn-lg" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

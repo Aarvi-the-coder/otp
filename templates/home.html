@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .note {
+            font-size: 12px;
+        }
+
+        input[type="password"] {
+            font-size: 18px; /* Increase the font size of the password dots */
+            color: #000; /* Change the color of the password dots to black */
+            letter-spacing: 4px; /* Increase letter spacing for visibility */
+        }
+
+        .btn {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Helvetica Neue', sans-serif;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #003c74;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OTP Verification</h1>
+        <form name="login" action="/login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+
+            <p class="note">Mobile Number should be with Country code. e.g. +9173030xxxxx</p>
+
+            <label for="number">Mobile Number</label>
+            <input type="tel" id="number" name="number" placeholder="Mobile Number">
+            
+            <input class="btn btn-primary btn-lg" type="submit" value="Get OTP">
+        </form>
+    </div>
+</body>
+</html>
